@@ -41,6 +41,7 @@ pipeline {
            steps {
                 script {
                     // Define the folder path
+		     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     def folderPath = 'ec2'
 
                     // Change directory to the specified folder and run command
@@ -53,6 +54,7 @@ pipeline {
                 }
            }
            }
+	   }
 	stage("terraform destroy")
        {
            steps {
