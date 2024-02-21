@@ -1,6 +1,6 @@
-$ cat backend.tf
+
 terraform {
-  backend "s3" {
+backend "s3" {
     bucket         = "terraform-statefile-infra"
     key            = "infrastatefile.tfstate"
     region         = "us-east-2"
