@@ -53,5 +53,23 @@ pipeline {
                 }
            }
            }
+	stage("terraform destroy")
+       {
+           steps {
+                script {
+                    // Define the folder path
+                    def folderPath = 'ec2'
+
+                    // Change directory to the specified folder and run command
+                    dir(folderPath) {
+                        sh '''
+                            # Run commands inside the changed directory
+                            terraform destroy -auto-approve
+                        '''
+                    }
+                }
+           }
+           }
+
        }
     }
