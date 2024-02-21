@@ -22,6 +22,7 @@ pipeline {
        {
            steps {
                 script {
+		 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     // Define the folder path
                     def folderPath = 'ec2'
 
@@ -36,6 +37,7 @@ pipeline {
                 }
            }
            }
+	   }
     stage("terraform apply")
        {
            steps {
