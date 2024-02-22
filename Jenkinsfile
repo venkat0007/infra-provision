@@ -29,7 +29,7 @@ pipeline {
                     dir(folderPath) {
                         sh '''
                             # Run commands inside the changed directory
-                            terraform init
+                            terraform init -input=false -reconfigure
                             terraform plan
                         '''
                     }
