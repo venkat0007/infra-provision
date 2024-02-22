@@ -1,11 +1,11 @@
 variable "access_key" {
  type = string
- default = "AKIAZ6BYF23TBLB4654K"
+ default = ""
  }
 
 variable "secret_key"{
 type =string
- default = "Wzbqo6J9N702yPTl+vON6keeLplFSLAQn2QTToW1"
+ default = ""
  }
  
  variable "ami"{
